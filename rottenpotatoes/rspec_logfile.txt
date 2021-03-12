@@ -1,0 +1,47 @@
+F
+
+Failures:
+
+  1) MoviesController Searching movies with the same director name should get all the movies with the same director name
+     Failure/Error: @director_name = Movie.find(params[:id])[:director]
+
+     ActiveRecord::RecordNotFound:
+       Couldn't find Movie with 'id'=1
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activerecord-4.2.10/lib/active_record/core.rb:155:in `find'
+     # ./app/controllers/movies_controller.rb:3:in `search'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/abstract_controller/base.rb:198:in `process_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/metal/rendering.rb:10:in `process_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activesupport-4.2.10/lib/active_support/callbacks.rb:117:in `call'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activesupport-4.2.10/lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activesupport-4.2.10/lib/active_support/callbacks.rb:505:in `call'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activesupport-4.2.10/lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activesupport-4.2.10/lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activesupport-4.2.10/lib/active_support/callbacks.rb:81:in `run_callbacks'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/abstract_controller/callbacks.rb:19:in `process_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/metal/rescue.rb:29:in `process_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activesupport-4.2.10/lib/active_support/notifications.rb:164:in `block in instrument'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activesupport-4.2.10/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activesupport-4.2.10/lib/active_support/notifications.rb:164:in `instrument'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/activerecord-4.2.10/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/abstract_controller/base.rb:137:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionview-4.2.10/lib/action_view/rendering.rb:30:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:639:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:67:in `process'
+     # /home/ec2-user/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_controller/test_case.rb:514:in `get'
+     # ./spec/controllers/movies_controller_spec.rb:16:in `block (3 levels) in <top (required)>'
+
+1 deprecation warning total
+
+Finished in 0.01918 seconds (files took 1.6 seconds to load)
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/controllers/movies_controller_spec.rb:6 # MoviesController Searching movies with the same director name should get all the movies with the same director name
+
+Coverage report generated for Cucumber Features, RSpec to /home/ec2-user/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 28 / 38 LOC (73.68%) covered.
