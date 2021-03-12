@@ -1,5 +1,13 @@
 class MoviesController < ApplicationController
-
+  def search
+    @director_name = Movie.find(params[:id])[:director]
+    if @director_name.nil?
+      redirect_to(movies_path)
+    else
+      @movies = Movie.where("director = ?", @director_name)
+    end
+  end
+  
   def show
     id = params[:id] # retrieve movie ID from URI route
     @movie = Movie.find(id) # look up movie by unique ID
