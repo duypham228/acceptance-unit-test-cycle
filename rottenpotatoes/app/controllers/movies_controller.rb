@@ -1,8 +1,9 @@
 class MoviesController < ApplicationController
   def search
     @director_name = Movie.find(params[:id])[:director]
-    if @director_name.nil?
+    if @director_name.nil? or @director_name.blank?
       redirect_to(movies_path)
+      flash[:notice] = "'#{Movie.find(params[:id])[:title]}' has no director info"
     else
       @movies = Movie.where("director = ?", @director_name)
     end
@@ -15,7 +16,26 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.all
+    sort = params[:sort] || session[:sort]
+    case sort
+    when 'title'
+      ordering,@title_header = {:title => :asc}, 'bg-warning hilite'
+    when 'release_date'
+      ordering,@date_header = {:release_date => :asc}, 'bg-warning hilite'
+    end
+    @all_ratings = Movie.all_ratings
+    @selected_ratings = params[:ratings] || session[:ratings] || {}
+
+    if @selected_ratings == {}
+      @selected_ratings = Hash[@all_ratings.map {|rating| [rating, rating]}]
+    end
+
+    if params[:sort] != session[:sort] or params[:ratings] != session[:ratings]
+      session[:sort] = sort
+      session[:ratings] = @selected_ratings
+      redirect_to :sort => sort, :ratings => @selected_ratings and return
+    end
+    @movies = Movie.where(rating: @selected_ratings.keys).order(ordering)
   end
 
   def new
