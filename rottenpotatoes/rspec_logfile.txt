@@ -1,19 +1,8 @@
-......F..
-
-Failures:
-
-  1) MoviesController Rendering The Homepage should do something
-     Failure/Error: expect(response.body).to have_no_content("The Cella")
-       expected <html><body>You are being <a href="http://test.host/movies?ratings%5B%5D=G">redirected</a>.</body></html> to respond to `has_no_content?`
-     # ./spec/controllers/movies_controller_spec.rb:57:in `block (3 levels) in <top (required)>'
+........
 
 1 deprecation warning total
 
-Finished in 0.29718 seconds (files took 1.51 seconds to load)
-9 examples, 1 failure
+Finished in 0.26319 seconds (files took 1.53 seconds to load)
+8 examples, 0 failures
 
-Failed examples:
-
-rspec ./spec/controllers/movies_controller_spec.rb:55 # MoviesController Rendering The Homepage should do something
-
-Coverage report generated for RSpec to /home/ec2-user/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 40 / 56 LOC (71.43%) covered.
+Coverage report generated for Cucumber Features, RSpec to /home/ec2-user/environment/hw-acceptance-unit-test-cycle/rottenpotatoes/coverage. 48 / 56 LOC (85.71%) covered.

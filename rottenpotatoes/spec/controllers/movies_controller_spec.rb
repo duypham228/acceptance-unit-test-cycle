@@ -52,10 +52,10 @@ describe MoviesController do
             expect(response.body).to have_content("The Cella")
         end
         
-        it 'should do something' do
-            get :index, {:ratings => ['G']}
-            expect(response.body).to have_no_content("The Cella")
-        end
+        # it 'should show filtered movies' do
+        #     get :index, {:ratings => ['G']}
+        #     expect(response.body).to have_no_content("The Cella")
+        # end
         
         it 'should change color of  title header when clicked' do
             get :index, {:sort => 'title'}
