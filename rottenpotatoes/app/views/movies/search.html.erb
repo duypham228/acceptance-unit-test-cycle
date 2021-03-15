@@ -3,29 +3,13 @@
   <thead>
     <tr>
       <th>Movie Title</th>
-      <th>Rating</th>
-      <th>Release Date</th>
-      <th>Director</th>
-      <th>More Info</th>
     </tr>
   </thead>
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
         <td>
-          <%= movie.title %>
-        </td>
-        <td>
-          <%= movie.rating %>
-        </td>
-        <td>
-          <%= movie.release_date %>
-        </td>
-        <td>
-          <%= movie.director %>
-        </td>
-        <td>
-          <%= link_to "More about #{movie.title}", movie_path(movie) %>
+          <%= movie %>
         </td>
       </tr>
     <% end %>
